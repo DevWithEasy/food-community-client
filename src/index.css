@@ -1,0 +1,32 @@
+@import "tailwindcss/base";
+@import "./styles/registration.css";
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+
+/* homepage css*/
+
+.wellcome{
+    @apply flex justify-between py-10 bg-blue-400 text-white
+}
+.jobcircular{
+    @apply flex justify-between py-6  bg-gray-50
+}
+.wellcome-btn{
+    @apply bg-white text-black hover:bg-blue-500 hover:text-white
+}
+.jobcircular-btn{
+    @apply bg-blue-500 text-white hover:bg-white hover:text-black px-8
+}
+.home-btn{
+    @apply px-4 py-2 rounded-lg shadow-lg transition-all duration-300 font-semibold
+}
+
+
+.input{
+    @apply w-full p-2 rounded border focus:outline-none focus:border-blue-500 placeholder:text-gray-300
+}
+.joblink-text{
+    @apply flex items-center space-x-1 text-gray-600 text-sm
+}
