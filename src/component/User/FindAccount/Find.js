@@ -1,8 +1,8 @@
-import {  useState } from "react";
-import { FindAccount, FindSearch } from "../others/FindAccount";
-import Loading from "../others/Loading";
+import { useState } from "react";
+import { FindAccount, FindSearch } from "../../others/FindAccount";
+import Loading from "../../others/Loading";
 
-const FindPeople = () => {
+const Find = () => {
   const [loading,setLoading] = useState(false)
   const [user,setUser]=useState({})
   const [value,setValue] = useState('')
@@ -16,4 +16,4 @@ const FindPeople = () => {
     </div>
   )
 };
-export default FindPeople;
+export default Find;
