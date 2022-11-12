@@ -1,24 +1,33 @@
-import { useState } from "react";
-import { CreatePost, Post } from "../others/Post";
+import { useEffect, useState } from "react";
+import { getAllPost } from "../../libs/post";
+import { CreatePost, Post, SinglePost } from "../others/Post";
+
 
 const Homepage = () => {
   const [showPost,setShowPost] = useState(false)
   const postView=()=>{
     setShowPost(!showPost)
   }
+  const [posts,setPosts] = useState({})
+  useEffect(()=>{
+    getAllPost(setPosts)
+  },[])
+  console.log(posts)
   return (
-    <div className="relative flex justify-between bg-slate-100">
-      <div className="w-3/12">
-        left
-      </div>
-      <div className="w-6/12 space-y-4">
+    <div className="relative flex justify-between bg-slate-200">
+      <div className="w-6/12 mx-auto space-y-4">
+        {/* CREATE POST DISPALY */}
         <Post postView={postView}/>
+        {/* CREATE POST DISPALY POPUP*/}
         {
           showPost && <CreatePost postView={postView}/>
         }
-      </div>
-      <div className="3/12">
-        right
+        {/* ALL POST RENDERING */}
+        <div className="space-y-2">
+          {
+            posts.length>0 && posts.map(post=><SinglePost post={post}/>)
+          }
+        </div>
       </div>
     </div>
   );

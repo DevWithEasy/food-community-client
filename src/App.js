@@ -10,12 +10,9 @@ export default function App() {
   return (
     <div className="">
       <Header/>
-      {
-        !auth.isAuth && <LogIn/> 
-      }
-      {
-        auth.isAuth && <Routers/>
-      }
+  
+      <Routers/>
+
       <Footer/>
     </div>
   );
